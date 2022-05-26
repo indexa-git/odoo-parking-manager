@@ -6,7 +6,7 @@
     "author": "CECOCARD Team",
     "website": "",
     "category": "",
-    "version": "14.0.0.1.1",
+    "version": "14.0.0.2.1",
     "depends": ["base"],
     "data": [
         "security/ir.model.access.csv",
