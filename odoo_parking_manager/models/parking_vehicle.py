@@ -7,7 +7,7 @@ class ParkingVehicle(models.Model):
 
     name = fields.Char(compute="_name_vehicle", store=True, index=True)
     year = fields.Integer()
-    maker_id = fields.Many2one("parking.vehicle.marke", required=True)
+    maker_id = fields.Many2one("parking.vehicle.maker", required=True)
     model = fields.Char(required=True)
     partner_id = fields.Many2one("res.partner", string="Owner")
     plate = fields.Char(size=30, required=True)
@@ -17,5 +17,5 @@ class ParkingVehicle(models.Model):
     def _compute_name_vehicle(self):
         for record in self:
             record.name = (
-                record.parking.vehicle.marke.name + record.model + record.plate
+                record.parking.vehicle.maker.name + record.model + record.plate
             )

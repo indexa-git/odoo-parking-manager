@@ -1,4 +1,4 @@
 from . import parking_section
 from . import parking_slot
 from . import parking_vehicle
-from . import parking_vehicle_marke
+from . import parking_vehicle_maker
