@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Actions -->
+
+    <record id="parking_slot_historical_action" model="ir.actions.act_window">
+        <field name="name">Parking Slot Historical</field>
+        <field name="res_model">parking.slot.historical</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Menu -->
+
+    <menuitem id="parking_slot_historical_menu"
+              name="Parking Slot Historical"
+              action="parking_slot_historical_action"
+              parent="odoo_parking_manager.parking_manager_menu_parking"
+              sequence="10"/>
+
+
+    <!-- Views -->
+
+    <record id="parking_slot_historical_form_view" model="ir.ui.view">
+        <field name="name">parking_slot_historical_form_view</field>
+        <field name="model">parking.slot.historical</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                <group>
+                    <field name="slot_id"/>
+                    <field name="partner_id"/>
+                    <field name="section_id"/>
+                    <field name="date"/>
+                    <field name="historical_type"/>
+                    <field name="company_id"/>
+                </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="parking_slot_historical_tree_view" model="ir.ui.view">
+        <field name="name">parking.slot.historical.tree.view</field>
+        <field name="model">parking.slot.historical</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="slot_id"/>
+                <field name="partner_id"/>
+                <field name="section_id"/>
+                <field name="date"/>
+                <field name="historical_type"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

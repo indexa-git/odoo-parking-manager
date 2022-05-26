@@ -3,3 +3,4 @@ access_parking_section,access_parking_section,model_parking_section,base.group_u
 access_parking_slot,access_parking_slot,model_parking_slot,base.group_user,1,1,1,1
 access_parking_vehicle,access_parking_vehicle,model_parking_vehicle,base.group_user,1,1,1,1
 access_parking_vehicle_maker,access_parking_vehicle_maker,model_parking_vehicle_maker,base.group_user,1,1,1,1
+access_parking_slot_historical,access_parking_slot_historical,model_parking_slot_historical,base.group_user,1,1,1,1
