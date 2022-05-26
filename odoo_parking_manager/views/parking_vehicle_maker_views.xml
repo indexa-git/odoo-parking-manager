@@ -16,7 +16,7 @@
               name="Vehicle Makers"
               action="parking_vehicle_maker_action"
               parent="odoo_parking_manager.parking_manager_menu_settings"
-              sequence="10"/>
+              sequence="10"/>z
 
 
     <!-- Views -->
