@@ -40,9 +40,9 @@
         </field>
     </record>
 
-    <record id="parking_vehicle_maker_tree_view" model="ir.ui.view">
-        <field name="name">parking.vehicle.maker.tree.view</field>
-        <field name="model">parking.vehicle.maker</field>
+    <record id="parking_slot_historical_tree_view" model="ir.ui.view">
+        <field name="name">parking.slot.historical.tree.view</field>
+        <field name="model">parking.slot.historical</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="slot_id"/>
