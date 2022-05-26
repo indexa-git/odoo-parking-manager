@@ -10,4 +10,6 @@ class ParkingSlotHistorical(models.Model):
     section_id = fields.Many2one("parking.section", string="Section")
     date = fields.Datetime(default=fields.Datetime.now)
     historical_type = fields.Selection([("entry", "Entry"), ("exit", "Exit")])
-    company_id = fields.Many2one("res.company", string="Company")
+    company_id = fields.Many2one(
+        "res.company", string="Company", default=lambda self: self.env.company
+    )
