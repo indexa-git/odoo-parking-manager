@@ -3,6 +3,7 @@ from odoo import fields, models
 
 class ParkingSection(models.Model):
     _name = "parking.section"
+    _description = "Parking Section"
 
     name = fields.Char(size=50, index=True, required=True)
     description = fields.Text()
