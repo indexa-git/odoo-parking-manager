@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Actions -->
+
+    <record id="parking_section_action" model="ir.actions.act_window">
+        <field name="name">Section</field>
+        <field name="res_model">parking.section</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Menu -->
+
+    <menuitem id="parking_section_menu"
+              name="Section"
+              action="parking_section_action"
+              parent="odoo_parking_manager.parking_manager_menu_settings"
+              sequence="20"/>
+
+
+    <!-- Views -->
+
+    <record id="parking_section_form_view" model="ir.ui.view">
+        <field name="name">parking.section.form.view</field>
+        <field name="model">parking.section</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="parking_section_tree_view" model="ir.ui.view">
+        <field name="name">parking.section.tree.view</field>
+        <field name="model">parking.section</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
