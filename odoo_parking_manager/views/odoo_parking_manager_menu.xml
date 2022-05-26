@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Menu -->
+
+    <menuitem id="parking_manager_menu_root"
+              name="Parking Manager"
+              sequence="53"/>
+
+    <menuitem id="parking_manager_menu_parking"
+              name="Parking"
+              parent="parking_manager_menu_root"
+              sequence="10"/>
+
+    <menuitem id="parking_manager_menu_settings"
+              name="Settings"
+              parent="parking_manager_menu_root"
+              sequence="20"/>
+
+</odoo>
