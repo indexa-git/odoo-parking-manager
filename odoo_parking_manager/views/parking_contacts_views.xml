@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Actions -->
+
+    <record id="parking_contacts_views" model="ir.actions.act_window">
+        <field name="name">Contacts</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <!--
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        -->
+        <field name="context">{'default_is_company': True}</field>
+
+    </record>
+
+
+    <!-- Menu -->
+
+    <menuitem id="parking_contacts_views"
+              name="contacts"
+              action="parking_contacts_action"
+              parent="odoo_parking_manager.parking_manager_menu"
+              sequence="10"/>
+
+
+    <!-- Views -->
+
+      <!-- kanban -->
+
+  <!-- Form -->
+    <record id="parking_contacts_view" model="ir.ui.view">
+        <field name="name">parking.contacts.form.view</field>
+        <field name="model">parking.contacts</field>
+        <field name="arch" type="xml">
+
+                <!-- referencia de res_partner_view
+              <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+-->
+            <form>
+                <group>
+                    <field name="name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="parking_contacts_tree_view" model="ir.ui.view">
+        <field name="name">parking.contacts.tree.view</field>
+        <field name="model">parking.contacts</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
