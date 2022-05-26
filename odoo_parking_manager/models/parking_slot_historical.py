@@ -11,5 +11,8 @@ class ParkingSlotHistorical(models.Model):
     date = fields.Datetime(default=fields.Datetime.now)
     historical_type = fields.Selection([("entry", "Entry"), ("exit", "Exit")])
     company_id = fields.Many2one(
-        "res.company", required=True, string="Company", default=lambda self: self.env.company
+        "res.company",
+        required=True,
+        string="Company",
+        default=lambda self: self.env.company,
     )
