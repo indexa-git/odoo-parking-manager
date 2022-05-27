@@ -3,33 +3,42 @@
 
     <!-- Actions -->
 
-    <record id="parking_contacts_views" model="ir.actions.act_window">
+    <record id="res_partner_action" model="ir.actions.act_window">
         <field name="name">Contacts</field>
         <field name="res_model">res.partner</field>
-        <field name="view_mode">kanban,tree,form</field>
-     <!--   <field name="context">{'default_is_company': True}</field> -->
+        <field name="view_mode">tree,form</field>
+
 
     </record>
 
 
     <!-- Menu -->
 
-    <menuitem id="parking_contacts_views"
-              name="contacts"
-              action="parking_contacts_action"
-              parent="odoo_parking_manager.parking_manager_menu"
-              sequence="10"/>
+    <menuitem id="res_partner_menu"
+              name="Contacts"
+              action="res_partner_action"
+              parent="odoo_parking_manager.parking_manager_menu.parking_manager_menu_contacts"
+              sequence="17"/>
 
 
     <!-- Views -->
 
-  <!-- Form -->
-    <record id="parking_contacts_view" model="ir.ui.view">
-        <field name="name">parking.contacts.form.view</field>
-        <field name="model">res_partner</field>
+      <!-- Tree -->
+   <record id="res_partner_tree_view" model="ir.ui.view">
+        <field name="name">res.partner.tree.view</field>
+        <field name="model">res.partner</field>
         <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
 
-
+  <!-- Form -->
+    <record id="res_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
 
             <form>
                 <group>
@@ -39,14 +48,5 @@
         </field>
     </record>
 
-    <record id="parking_contacts_tree_view" model="ir.ui.view">
-        <field name="name">parking.contacts.tree.view</field>
-        <field name="model">res_partner</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-            </tree>
-        </field>
-    </record>
 
 </odoo>
