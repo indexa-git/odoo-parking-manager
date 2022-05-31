@@ -15,7 +15,13 @@
     <menuitem id="parking_manager_menu_contacts"
               name="Contacts"
               parent="parking_manager_menu_root"
-              sequence="15"/>
+              sequence="18"/>
+
+   <menuitem id="parking_manager_menu_contacts"
+              name="Contacts"
+              parent="parking_manager_menu_root"
+              sequence="17"/>
+
 
     <menuitem id="parking_manager_menu_settings"
               name="Settings"

@@ -17,7 +17,7 @@
     <menuitem id="res_partner_menu"
               name="Contacts"
               action="res_partner_action"
-              parent="odoo_parking_manager.parking_manager_menu.parking_manager_menu_contacts"
+              parent="odoo_parking_manager.parking_manager_menu_settings"
               sequence="17"/>
 
 
