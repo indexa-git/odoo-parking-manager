@@ -1,5 +1,8 @@
 from odoo import models, fields
 from odoo.exceptions import UserError
+import logging
+
+_logger = logging.getLogger(__name__)
 
 
 class ParkingSlotHistorical(models.Model):
@@ -19,4 +22,9 @@ class ParkingSlotHistorical(models.Model):
     )
 
     def unlink(self):
-        raise UserError('You cannot remove/deactivate the historical.')
+        _logger.warning(
+            "The user %s tried to delete the historical %s",
+            self.partner_id.name,
+            self.id,
+        )
+        raise UserError("You cannot remove/deactivate the historical.")
