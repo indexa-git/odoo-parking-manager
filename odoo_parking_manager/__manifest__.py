@@ -19,7 +19,7 @@
         "views/parking_slot_views.xml",
         "views/parking_slot_historical_views.xml",
     ],
-    "demo":[
+    "demo": [
         "demo/res_partner_demo.xml",
     ],
 }
