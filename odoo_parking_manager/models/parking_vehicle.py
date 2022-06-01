@@ -5,7 +5,7 @@ class ParkingVehicle(models.Model):
     _name = "parking.vehicle"
     _description = "Parking Vehicle"
 
-    name = fields.Char(size=80, compute="_compute_name_vehicle", store=True, index=True)
+    name = fields.Char(compute="_compute_name_vehicle", store=True, index=True)
     year = fields.Integer()
     maker_id = fields.Many2one("parking.vehicle.maker", required=True)
     model = fields.Char(required=True)

@@ -18,4 +18,5 @@
         "views/parking_slot_views.xml",
         "views/parking_slot_historical_views.xml",
     ],
+    "demo": ["data/parking_vehicle_maker.csv"],
 }
