@@ -5,7 +5,7 @@ class ParkingVehicle(models.Model):
     _name = "parking.vehicle"
     _description = "Parking Vehicle"
 
-    name = fields.Char(compute="_name_vehicle", store=True, index=True)
+    name = fields.Char(size=80, compute="_compute_name_vehicle", store=True, index=True)
     year = fields.Integer()
     maker_id = fields.Many2one("parking.vehicle.maker", required=True)
     model = fields.Char(required=True)
@@ -16,6 +16,5 @@ class ParkingVehicle(models.Model):
     @api.depends("maker_id", "model", "plate")
     def _compute_name_vehicle(self):
         for record in self:
-            record.name = (
-                record.parking.vehicle.maker.name + record.model + record.plate
-            )
+            record.name = record.model + record.plate
+
