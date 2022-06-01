@@ -1,6 +1,6 @@
-id, name
-alfa romeo,ALFA ROMEO
-aston martin lagonda ltd,Aston Martin Lagonda Ltd
+id,name
+alfa_romeo,ALFA ROMEO
+aston_martin_lagonda_ltd,Aston Martin Lagonda Ltd
 audi,Audi
 bmw,BMW
 chevrolet,Chevrolet
@@ -11,9 +11,9 @@ jaguar,Jaguar
 lamborghini,Lamborghini
 mazda,MAZDA
 mclaren,McLaren
-mercedes-benz,Mercedes-Benz
+mercedes_benz,Mercedes-Benz
 nissan,NISSAN
-pagani automobili s.p.a.,Pagani Automobili S.p.A.
+pagani_automobili,Pagani Automobili S.p.A.
 porsche,Porsche
 fiat,FIAT
 mini,Mini
@@ -22,7 +22,7 @@ subaru,Subaru
 bentley,Bentley
 buick,Buick
 ford,Ford
-hyundai motor company,HYUNDAI MOTOR COMPANY
+hyundai_motor_company,HYUNDAI MOTOR COMPANY
 lexus,LEXUS
 maserati,MASERATI
 roush,Roush
@@ -30,9 +30,9 @@ volkswagen,Volkswagen
 acura,Acura
 cadillac,Cadillac
 infiniti,INFINITI
-kia motors corporation,KIA MOTORS CORPORATION
-mitsubishi motors corporation,Mitsubishi Motors Corporation
-rolls-royce motor cars limited,Rolls-Royce Motor Cars Limited
+kia_motors_corporation,KIA MOTORS CORPORATION
+mitsubishi_motors_corporation,Mitsubishi Motors Corporation
+rolls_royce_motor_cars_limited,Rolls-Royce Motor Cars Limited
 toyota,TOYOTA
 volvo,Volvo
 chrysler,Chrysler
@@ -41,4 +41,4 @@ gmc,GMC
 ram,RAM
 chevrolet,CHEVROLET
 jeep,Jeep
-land rover,Land Rover
+land_rover,Land Rover
