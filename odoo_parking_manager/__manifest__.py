@@ -12,7 +12,7 @@
         "security/ir.model.access.csv",
         "views/odoo_parking_manager_menu.xml",
         "views/parking_vehicle_maker_views.xml",
-        "views/parking_slot_historical_views.xml"
+        "views/parking_slot_historical_views.xml",
         "views/parking_vehicle_views.xml",
     ],
 }
