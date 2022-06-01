@@ -16,5 +16,6 @@ class ParkingVehicle(models.Model):
     @api.depends("maker_id", "model", "plate")
     def _compute_name_vehicle(self):
         for record in self:
-            record.name = record.model + record.plate
-
+            record.name = " ".join(
+                [record.maker_id.name or " ", record.model or " ", record.plate or " "]
+            ).strip()
