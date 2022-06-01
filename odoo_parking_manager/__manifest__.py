@@ -11,7 +11,9 @@
     "data": [
         "security/ir.model.access.csv",
         "views/odoo_parking_manager_menu.xml",
+        "views/parking_section_views.xml",
         "views/parking_vehicle_maker_views.xml",
         "views/parking_slot_views.xml",
+        "views/parking_slot_historical_views.xml",
     ],
 }
