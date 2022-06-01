@@ -23,6 +23,6 @@
     "demo": [
         "demo/res_partner_demo.xml",
         "demo/parking_section_demo.xml",
-        "demo/slot_demo.csv",
+        "demo/parking.slot.csv",
     ],
 }
