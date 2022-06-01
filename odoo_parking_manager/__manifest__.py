@@ -20,5 +20,6 @@
     ],
     "demo": [
         "demo/parking_section_demo.xml",
+        "demo/slot_demo.csv",
     ],
 }
