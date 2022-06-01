@@ -12,6 +12,7 @@
               parent="parking_manager_menu_root"
               sequence="10"/>
 
+
     <menuitem id="parking_manager_menu_settings"
               name="Settings"
               parent="parking_manager_menu_root"
