@@ -3,10 +3,10 @@
     "summary": "",
     "description": """
     """,
-    "author": "CECOCARD Team",
+    "author": "CECOMSA, CardNet, Indexa",
     "website": "",
     "category": "",
-    "version": "14.0.0.2.1",
+    "version": "14.0.0.3.1",
     "depends": ["base"],
     "data": [
         "security/ir.model.access.csv",
@@ -17,5 +17,8 @@
         "views/parking_vehicle_views.xml",
         "views/parking_slot_views.xml",
         "views/parking_slot_historical_views.xml",
+    ],
+    "demo": [
+        "demo/parking_section_demo.xml",
     ],
 }

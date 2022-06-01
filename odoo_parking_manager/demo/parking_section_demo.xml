@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="parking_section_demo_1" model="parking.section">
+        <field name="name">Section A</field>
+        <field name="description">This is the section of the A's slots</field>
+    </record>
+
+    <record id="parking_section_demo_2" model="parking.section">
+        <field name="name">Section B</field>
+        <field name="description">This is the section of the B's slots</field>
+    </record>
+
+    <record id="parking_section_demo_3" model="parking.section">
+        <field name="name">Section C</field>
+        <field name="description">This is the section of the C's slots</field>
+    </record>
+
+    <record id="parking_section_demo_4" model="parking.section">
+        <field name="name">Section D</field>
+        <field name="description">This is the section of the D's slots</field>
+    </record>
+</odoo>
