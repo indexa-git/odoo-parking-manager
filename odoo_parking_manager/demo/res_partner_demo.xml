@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="demo_partner_1" model="res.partner">
+        <field name="name">Giame Fajardo</field>
+    </record>
+    <record id="demo_partner_2" model="res.partner">
+        <field name="name">Raelvi Almanzar</field>
+    </record>
+    <record id="demo_partner_3" model="res.partner">
+        <field name="name">Christopher Rodriguez</field>
+    </record>
+    <record id="demo_partner_4" model="res.partner">
+        <field name="name">Ana Paredes</field>
+    </record>
+      <record id="demo_partner_5" model="res.partner">
+        <field name="name">Alvaro Bencosme</field>
+    </record>
+      <record id="demo_partner_6" model="res.partner">
+        <field name="name">Mauricio Matos</field>
+    </record>
+      <record id="demo_partner_7" model="res.partner">
+        <field name="name">Jose Lopez</field>
+    </record>
+      <record id="demo_partner_8" model="res.partner">
+        <field name="name">Solenny Peralta</field>
+    </record>
+</odoo>
