@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Actions -->
+
+    <record id="res_partner_action" model="ir.actions.act_window">
+        <field name="name">Contacts</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Menu -->
+
+    <menuitem id="res_partner_menu"
+              name="Contacts"
+              action="res_partner_action"
+              parent="odoo_parking_manager.parking_manager_menu_parking"
+              sequence="17"/>
+
+
+    <!-- Views -->
+
+      <!-- Tree -->
+
+   <record id="res_partner_tree_view" model="ir.ui.view">
+        <field name="name">res.partner.tree.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+  <!-- Form -->
+    <record id="res_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+
+            <form>
+                <group>
+                    <field name="name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

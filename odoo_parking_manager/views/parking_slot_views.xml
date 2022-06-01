@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Actions -->
+
+    <record id="parking_slot_action" model="ir.actions.act_window">
+        <field name="name">Parking Slot</field>
+        <field name="res_model">parking.slot</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Menu -->
+
+    <menuitem id="parking_slot_menu"
+              name="Parking Slot"
+              action="parking_slot_action"
+              parent="odoo_parking_manager.parking_manager_menu_parking"
+              sequence="10"/>
+
+
+    <!-- Views -->
+
+    <record id="parking_slot_form_view" model="ir.ui.view">
+        <field name="name">parking.slot.form.view</field>
+        <field name="model">parking.slot</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="partner_id"/>
+                    <field name="section_id"/>
+                    <field name="company_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="parking_slot_tree_view" model="ir.ui.view">
+        <field name="name">parking.slot.tree.view</field>
+        <field name="model">parking.slot</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+                <field name="partner_id"/>
+                <field name="section_id"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
