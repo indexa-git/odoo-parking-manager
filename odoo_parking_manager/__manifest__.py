@@ -3,7 +3,7 @@
     "summary": "",
     "description": """
     """,
-    "author": "CECOCARD Team",
+    "author": "CECOMSA, CardNet, Indexa",
     "website": "",
     "category": "",
     "version": "14.0.0.2.1",
