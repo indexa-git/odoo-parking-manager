@@ -3,27 +3,27 @@
 
     <!-- Actions -->
 
-    <record id="parking_slots_action" model="ir.actions.act_window">
-        <field name="name">Parking Slots</field>
-        <field name="res_model">parking.slots</field>
+    <record id="parking_slot_action" model="ir.actions.act_window">
+        <field name="name">Parking Slot</field>
+        <field name="res_model">parking.slot</field>
         <field name="view_mode">tree,form</field>
     </record>
 
 
     <!-- Menu -->
 
-    <menuitem id="parking_slots_menu"
-              name="Parking Slots"
-              action="parking_slots_action"
+    <menuitem id="parking_slot_menu"
+              name="Parking Slot"
+              action="parking_slot_action"
               parent="odoo_parking_manager.parking_manager_menu_parking"
               sequence="10"/>
 
 
     <!-- Views -->
 
-    <record id="parking_slots_form_view" model="ir.ui.view">
-        <field name="name">parking.slots.form.view</field>
-        <field name="model">parking.slots</field>
+    <record id="parking_slot_form_view" model="ir.ui.view">
+        <field name="name">parking.slot.form.view</field>
+        <field name="model">parking.slot</field>
         <field name="arch" type="xml">
             <form>
                 <group>
@@ -37,9 +37,9 @@
         </field>
     </record>
 
-    <record id="parking_slots_tree_view" model="ir.ui.view">
-        <field name="name">parking.slots.tree.view</field>
-        <field name="model">parking.slots</field>
+    <record id="parking_slot_tree_view" model="ir.ui.view">
+        <field name="name">parking.slot.tree.view</field>
+        <field name="model">parking.slot</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
