@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="True">
+    <record id="res_partner_default" model="res.partner">
+        <field name="name">Default driver</field>
+    </record>
+</odoo>
