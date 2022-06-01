@@ -11,4 +11,8 @@ class ParkingSlot(models.Model):
     )
     partner_id = fields.Many2one("res.partner", ondelete="set null", string="Occupant")
     section_id = fields.Many2one("parking.section", ondelete="set null")
-    company_id = fields.Many2one("res.company", ondelete="set null")
+    company_id = fields.Many2one(
+        "res.company",
+        ondelete="set null",
+        default=lambda self: self.env.company,
+    )
