@@ -6,7 +6,7 @@
     "author": "CECOMSA, CardNet, Indexa",
     "website": "",
     "category": "",
-    "version": "14.0.0.2.1",
+    "version": "14.0.0.3.1",
     "depends": ["base"],
     "data": [
         "data/res_partner_data.xml",
@@ -21,5 +21,6 @@
     ],
     "demo": [
         "demo/res_partner_demo.xml",
+        "demo/parking_section_demo.xml",
     ],
 }
