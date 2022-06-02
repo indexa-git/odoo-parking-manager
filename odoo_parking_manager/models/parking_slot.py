@@ -9,7 +9,7 @@ class ParkingSlot(models.Model):
         selection=[("1", "Available"), ("2", "Taken"), ("3", "No Available")]
     )
     partner_id = fields.Many2one("res.partner", ondelete="set null", string="Occupant")
-    vehicle_types = fields.Selection(selection="parking_vehicle.vehicle_types")
+    _get_vehicle_types_selection = fields.Selection(selection="parking_vehicle._get_vehicle_types_selection")
     section_id = fields.Many2one("parking.section", ondelete="set null")
     company_id = fields.Many2one(
         "res.company",
