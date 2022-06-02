@@ -20,7 +20,7 @@ class ParkingSlot(models.Model):
         return [("1", "Available"), ("2", "Taken"), ("3", "No Available")]
 
     def log_slot_historical(self):
-        self.env["parking.slot.historical"].create(
+        self.sudo().env["parking.slot.historical"].create(
             {
                 "slot_id": self.id,
                 "partner_id": self.partner_id.id,
