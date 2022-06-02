@@ -41,7 +41,7 @@ class ParkingSlot(models.Model):
     def write(self, vals):
         res = super(ParkingSlot, self).write(vals)
 
-        if vals.get("state"):
+        if res and vals.get("state"):
             self.log_slot_historical()
 
         return res
