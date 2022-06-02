@@ -16,3 +16,12 @@ class ParkingSlot(models.Model):
         ondelete="set null",
         default=lambda self: self.env.company,
     )
+
+    def set_available_slot(self):
+        self.state = "1"
+
+    def set_taken_slot(self):
+        self.state = "2"
+
+    def set_no_available_slot(self):
+        self.state = "3"
