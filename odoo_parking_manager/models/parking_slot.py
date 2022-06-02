@@ -15,6 +15,15 @@ class ParkingSlot(models.Model):
         default=lambda self: self.env.company,
     )
 
+    def set_available_slot(self):
+        self.state = "1"
+
+    def set_taken_slot(self):
+        self.state = "2"
+
+    def set_no_available_slot(self):
+        self.state = "3"
+
     @api.model
     def get_slot_state_selection(self):
         return [("1", "Available"), ("2", "Taken"), ("3", "No Available")]
