@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class ParkingSlot(models.Model):
@@ -6,7 +6,7 @@ class ParkingSlot(models.Model):
     _description = "Parking Slot"
 
     name = fields.Char(index=True)
-    state = fields.Selection(selection="_get_slot_state_selection")
+    state = fields.Selection(selection="get_slot_state_selection")
     partner_id = fields.Many2one("res.partner", ondelete="set null", string="Occupant")
     section_id = fields.Many2one("parking.section", ondelete="set null")
     company_id = fields.Many2one(
@@ -15,6 +15,7 @@ class ParkingSlot(models.Model):
         default=lambda self: self.env.company,
     )
 
+    @api.model
     def get_slot_state_selection(self):
         return [("1", "Available"), ("2", "Taken"), ("3", "No Available")]
 
@@ -24,7 +25,7 @@ class ParkingSlot(models.Model):
                 "slot_id": self.id,
                 "partner_id": self.partner_id.id,
                 "section_id": self.section_id.id,
-                "historical_type": self._get_slot_state_selection(),
+                "historical_type": self.state,
             }
         )
 

@@ -13,7 +13,7 @@ class ParkingSlotHistorical(models.Model):
     partner_id = fields.Many2one("res.partner", string="Occupant", index=True)
     section_id = fields.Many2one("parking.section", string="Section")
     date = fields.Datetime(default=fields.Datetime.now)
-    historical_type = fields.Selection("self._get_historical_type")
+    historical_type = fields.Selection(selection="_get_historical_type")
 
     company_id = fields.Many2one(
         "res.company",
@@ -31,4 +31,4 @@ class ParkingSlotHistorical(models.Model):
         raise UserError("You cannot remove/deactivate the historical.")
 
     def _get_historical_type(self):
-        self.env["parking.slot"].get_slot_state_selection()
+        return self.env["parking.slot"].get_slot_state_selection()
