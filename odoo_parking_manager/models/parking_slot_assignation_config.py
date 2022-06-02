@@ -1,7 +1,10 @@
 from odoo import models, fields
 
 
-class SlotAssignationConfig:
+class ParkingSlotAssignationConfig:
+    _name = "parking.slot.assignation.config"
+    _description = "Parking Slot Assignation Config"
+
     type = fields.Selection(
         selection=[
             ("gate", "Distance near to gate."),
