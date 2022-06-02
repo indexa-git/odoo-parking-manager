@@ -14,14 +14,14 @@ class ParkingVehicle(models.Model):
     plate = fields.Char(size=30, required=True)
     color = fields.Char(size=10)
 
-    vehicle_type = fields.Selection(selection="vehicle_types")
+    vehicle_type = fields.Selection(selection="_get_vehicle_types_selection")
 
     @api.model
-    def vehicle_types(self):
+    def _get_vehicle_types_selection(self):
         return [
             ("bicycle", "Bicycle"),
             ("motorcycle", "Motorcycle"),
-            ("Car", "Car"),
+            ("car", "Car"),
             ("jeepeta", "Jeepeta"),
         ]
 
@@ -36,6 +36,6 @@ class ParkingVehicle(models.Model):
         (
             "plate_unique",
             "unique(plate)",
-            "Operacion cancelada. Existe una placa con esta combinacion",
+            "Operation cancelled. There is a plate with this combination",
         )
     ]
