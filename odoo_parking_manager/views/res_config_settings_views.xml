@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+    <!-- Views -->
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.odoo_parking_manager</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="70"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Parking" string="Parking" data-key="odoo_parking_manager" groups="hr.group_hr_manager">
+                    <h2>Parking</h2>
+                    <div class="row mt16 o_settings_container" name="parking_setting_container">
+                        <div class="col-12 col-lg-6 o_setting_box" id="mandatory_control_setting" title="Madatory">
+
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Mandatory</span>
+                                <div class="content-group" name="odoo_parking_manager_mandatory_options">
+                                    <div class="row">
+                                        <field name="mandatory" class="col-lg-1 ml16"/>
+                                        <label for="mandatory" class="o_light_label"/>
+                                    </div>
+                                </div>
+
+                                <field name="type" class="col-lg-1 ml16"/>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+        </record>
+
+    <!-- Action -->
+     <record id="parking_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'odoo_parking_manager', 'bin_size': False}</field>
+    </record>
+
+
+    <!-- Menu -->
+    <menuitem id="parking_configuration"
+            name="Settings"
+            parent="parking_manager_menu_settings"
+            sequence="0"
+            action="parking_config_settings_action"
+            groups="base.group_system"/>
+</odoo>
