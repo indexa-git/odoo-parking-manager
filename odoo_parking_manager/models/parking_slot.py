@@ -10,9 +10,9 @@ class ParkingSlot(models.Model):
         selection=[("1", "Available"), ("2", "Taken"), ("3", "No Available")]
     )
     takable = fields.Boolean
-    distance_to_gate = fields.Float
-    distance_to_exit = fields.Float
-    exclusiveness = fields.Float
+    distance_to_gate = fields.Float()
+    distance_to_exit = fields.Float()
+    exclusiveness = fields.Float()
     partner_id = fields.Many2one("res.partner", ondelete="set null", string="Occupant")
     section_id = fields.Many2one("parking.section", ondelete="set null")
     company_id = fields.Many2one(

@@ -18,7 +18,7 @@
         "views/parking_vehicle_views.xml",
         "views/parking_slot_views.xml",
         "views/parking_slot_historical_views.xml",
-        "views/parking_slot_assignation_config_views.xml",
+        "views/res_config_settings_views.xml",
         "data/parking.vehicle.maker.csv",
     ],
     "demo": [
