@@ -29,14 +29,17 @@ class ParkingSlot(models.Model):
         return [("1", "Available"), ("2", "Taken"), ("3", "No Available")]
 
     def log_slot_historical(self):
-        self.sudo().env["parking.slot.historical"].create(
-            {
-                "slot_id": self.id,
-                "partner_id": self.partner_id.id,
-                "section_id": self.section_id.id,
-                "historical_type": self.state,
-            }
-        )
+        val_list = []
+        for record in self:
+            val_list.append(
+                {
+                    "slot_id": record.id,
+                    "partner_id": record.partner_id.id,
+                    "section_id": record.section_id.id,
+                    "historical_type": record.state,
+                }
+            )
+        self.env["parking.slot.historical"].sudo().create(val_list)
 
     def write(self, vals):
         res = super(ParkingSlot, self).write(vals)
