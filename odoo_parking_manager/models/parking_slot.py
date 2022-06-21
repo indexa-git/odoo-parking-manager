@@ -9,10 +9,10 @@ def get_slot_state_selection(self):
 class ParkingSlot(models.Model):
     _name = "parking.slot"
     _description = "Parking Slot"
-
     name = fields.Char(index=True)
     state = fields.Selection(selection="get_slot_state_selection")
     partner_id = fields.Many2one("res.partner", ondelete="set null", string="Occupant")
+    vehicle_type = fields.Selection(selection=lambda self: self.env["parking.vehicle"]._get_vehicle_types_selection())
     section_id = fields.Many2one("parking.section", ondelete="set null")
     owner_type = fields.Selection(
         selection=[
@@ -58,3 +58,5 @@ class ParkingSlot(models.Model):
             self.log_slot_historical()
 
         return res
+
+
