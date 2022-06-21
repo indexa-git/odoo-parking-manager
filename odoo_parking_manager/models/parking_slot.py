@@ -1,6 +1,11 @@
 from odoo import models, fields, api
 
 
+@api.model
+def get_slot_state_selection(self):
+    return [("1", "Available"), ("2", "Taken"), ("3", "No Available")]
+
+
 class ParkingSlot(models.Model):
     _name = "parking.slot"
     _description = "Parking Slot"
@@ -9,6 +14,14 @@ class ParkingSlot(models.Model):
     state = fields.Selection(selection="get_slot_state_selection")
     partner_id = fields.Many2one("res.partner", ondelete="set null", string="Occupant")
     section_id = fields.Many2one("parking.section", ondelete="set null")
+    owner_type = fields.Selection(
+        selection=[
+            ("pregnant", "Pregnant"),
+            ("disabled", "Disabled"),
+            ("normal", "Normal"),
+        ],
+        default="normal",
+    )
     company_id = fields.Many2one(
         "res.company",
         ondelete="set null",
@@ -23,10 +36,6 @@ class ParkingSlot(models.Model):
 
     def set_no_available_slot(self):
         self.state = "3"
-
-    @api.model
-    def get_slot_state_selection(self):
-        return [("1", "Available"), ("2", "Taken"), ("3", "No Available")]
 
     def log_slot_historical(self):
         val_list = []
