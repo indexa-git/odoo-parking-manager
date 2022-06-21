@@ -28,6 +28,7 @@ class ParkingSlot(models.Model):
         default=lambda self: self.env.company,
     )
 
+
     def set_available_slot(self):
         self.state = "1"
 
