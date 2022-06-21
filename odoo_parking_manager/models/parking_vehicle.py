@@ -1,20 +1,9 @@
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
 
 
 class ParkingVehicle(models.Model):
     _name = "parking.vehicle"
     _description = "Parking Vehicle"
-
-    name = fields.Char(compute="_compute_name_vehicle", store=True, index=True)
-    year = fields.Integer()
-    maker_id = fields.Many2one("parking.vehicle.maker", required=True)
-    model = fields.Char(required=True)
-    partner_id = fields.Many2one("res.partner", string="Owner")
-    plate = fields.Char(size=30, required=True)
-    color = fields.Char(size=10)
-
-    vehicle_type = fields.Selection(selection="_get_vehicle_types_selection")
 
     @api.model
     def _get_vehicle_types_selection(self):
@@ -31,6 +20,16 @@ class ParkingVehicle(models.Model):
             record.name = " ".join(
                 [record.maker_id.name or " ", record.model or " ", record.plate or " "]
             ).strip()
+
+    name = fields.Char(compute="_compute_name_vehicle", store=True, index=True)
+    year = fields.Integer()
+    maker_id = fields.Many2one("parking.vehicle.maker", required=True)
+    model = fields.Char(required=True)
+    partner_id = fields.Many2one("res.partner", string="Owner")
+    plate = fields.Char(size=30, required=True)
+    color = fields.Char(size=10)
+
+    vehicle_type = fields.Selection(selection="_get_vehicle_types_selection")
 
     _sql_constraints = [
         (
