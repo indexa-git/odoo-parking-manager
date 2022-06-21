@@ -1,5 +1,4 @@
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
 
 
 class ParkingVehicle(models.Model):
@@ -24,13 +23,6 @@ class ParkingVehicle(models.Model):
     color = fields.Char()
     vehicle_type = fields.Selection(selection="_get_vehicle_types_selection")
 
-    @api.depends("maker_id", "model", "plate")
-    def _compute_name_vehicle(self):
-        for record in self:
-            record.name = " ".join(
-                [record.maker_id.name or " ", record.model or " ", record.plate or " "]
-            ).strip()
-
     _sql_constraints = [
         (
             "plate_unique",
@@ -38,3 +30,10 @@ class ParkingVehicle(models.Model):
             "Operation cancelled. There is a plate with this combination",
         )
     ]
+
+    @api.depends("maker_id", "model", "plate")
+    def _compute_name_vehicle(self):
+        for record in self:
+            record.name = " ".join(
+                [record.maker_id.name or " ", record.model or " ", record.plate or " "]
+            ).strip()
