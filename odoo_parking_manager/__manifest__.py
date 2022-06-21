@@ -7,7 +7,7 @@
     "website": "",
     "category": "",
     "version": "14.0.0.3.1",
-    "depends": ["base"],
+    "depends": ["base_setup"],
     "data": [
         "data/res_partner_data.xml",
         "security/ir.model.access.csv",
