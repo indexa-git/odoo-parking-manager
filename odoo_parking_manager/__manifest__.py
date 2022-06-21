@@ -6,7 +6,7 @@
     "author": "CECOMSA, CardNet, Indexa",
     "website": "",
     "category": "",
-    "version": "14.0.0.3.1",
+    "version": "14.0.0.4.1",
     "depends": ["base"],
     "data": [
         "data/res_partner_data.xml",
