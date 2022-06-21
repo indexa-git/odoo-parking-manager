@@ -32,6 +32,7 @@
                     <field name="partner_id"/>
                     <field name="section_id"/>
                     <field name="company_id"/>
+                    <field name="owner_type"/>
                 </group>
             </form>
         </field>
@@ -47,6 +48,7 @@
                 <field name="partner_id"/>
                 <field name="section_id"/>
                 <field name="company_id"/>
+                <field name="owner_type"/>
             </tree>
         </field>
     </record>

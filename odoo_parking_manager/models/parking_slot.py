@@ -16,3 +16,11 @@ class ParkingSlot(models.Model):
         ondelete="set null",
         default=lambda self: self.env.company,
     )
+    owner_type = fields.Selection(
+        selection=[
+            ("pregnant", "Pregnant"),
+            ("disabled", "Disabled"),
+            ("normal", "Normal"),
+        ],
+        default="normal",
+    )
