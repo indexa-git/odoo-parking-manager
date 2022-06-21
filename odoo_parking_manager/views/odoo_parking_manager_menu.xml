@@ -14,7 +14,7 @@
 
 
     <menuitem id="parking_manager_menu_settings"
-              name="Settings"
+              name="Configurations"
               parent="parking_manager_menu_root"
               sequence="20"/>
 

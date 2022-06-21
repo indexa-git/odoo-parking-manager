@@ -10,6 +10,10 @@ class ParkingSlot(models.Model):
     _name = "parking.slot"
     _description = "Parking Slot"
     name = fields.Char(index=True)
+    takable = fields.Boolean
+    distance_to_gate = fields.Float()
+    distance_to_exit = fields.Float()
+    exclusiveness = fields.Float()
     state = fields.Selection(selection="get_slot_state_selection")
     partner_id = fields.Many2one("res.partner", ondelete="set null", string="Occupant")
     vehicle_type = fields.Selection(selection=lambda self: self.env["parking.vehicle"]._get_vehicle_types_selection())

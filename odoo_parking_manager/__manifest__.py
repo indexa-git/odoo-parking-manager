@@ -6,8 +6,8 @@
     "author": "CECOMSA, CardNet, Indexa",
     "website": "",
     "category": "",
-    "version": "14.0.0.4.1",
-    "depends": ["base"],
+    "version": "14.0.0.3.1",
+    "depends": ["base_setup"],
     "data": [
         "data/res_partner_data.xml",
         "security/ir.model.access.csv",
@@ -18,6 +18,7 @@
         "views/parking_vehicle_views.xml",
         "views/parking_slot_views.xml",
         "views/parking_slot_historical_views.xml",
+        "views/res_config_settings_views.xml",
         "data/parking.vehicle.maker.csv",
     ],
     "demo": [
