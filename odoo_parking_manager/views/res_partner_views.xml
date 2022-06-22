@@ -21,9 +21,9 @@
 
     <!-- Views -->
 
-      <!-- Tree -->
+    <!-- Tree -->
 
-   <record id="res_partner_tree_view" model="ir.ui.view">
+    <record id="res_partner_tree_view" model="ir.ui.view">
         <field name="name">res.partner.tree.view</field>
         <field name="model">res.partner</field>
         <field name="arch" type="xml">
@@ -33,7 +33,7 @@
         </field>
     </record>
 
-  <!-- Form -->
+    <!-- Form -->
     <record id="res_partner_form" model="ir.ui.view">
         <field name="name">res.partner.form.view</field>
         <field name="model">res.partner</field>

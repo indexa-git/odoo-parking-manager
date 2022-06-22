@@ -9,8 +9,11 @@
     "version": "14.0.0.3.1",
     "depends": ["base_setup"],
     "data": [
-        "data/res_partner_data.xml",
+        "security/ir_rule_data.xml",
+        "security/res_user_data.xml",
+        "security/res_groups_data.xml",
         "security/ir.model.access.csv",
+        "data/res_partner_data.xml",
         "views/odoo_parking_manager_menu.xml",
         "views/parking_section_views.xml",
         "views/parking_vehicle_maker_views.xml",

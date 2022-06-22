@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="parking_user" model="res.groups">
+        <field name="name">Parking User</field>
+        <field name="users" eval="[(4,ref('odoo_parking_manager.parking_api_user'))]"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="parking_manager" model="res.groups">
+        <field name="name">Parking Manager</field>
+    </record>
+
+</odoo>

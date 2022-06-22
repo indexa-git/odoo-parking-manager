@@ -32,7 +32,8 @@ class ParkingSlot(models.Model):
     )
     company_id = fields.Many2one(
         "res.company",
-        ondelete="set null",
+        required=True,
+        string="Company",
         default=lambda self: self.env.company,
     )
 
