@@ -22,6 +22,12 @@ class ParkingVehicle(models.Model):
     plate = fields.Char(required=True)
     color = fields.Char()
     vehicle_type = fields.Selection(selection="_get_vehicle_types_selection")
+    company_id = fields.Many2one(
+        "res.company",
+        required=True,
+        string="Company",
+        default=lambda self: self.env.company,
+    )
 
     _sql_constraints = [
         (

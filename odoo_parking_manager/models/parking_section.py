@@ -10,3 +10,9 @@ class ParkingSection(models.Model):
     parent_id = fields.Many2one("parking.section", ondelete="set null")
     children_ids = fields.One2many("parking.section", "parent_id", "Child Sections")
     slot_ids = fields.One2many("parking.slot", "section_id")
+    company_id = fields.Many2one(
+        "res.company",
+        required=True,
+        string="Company",
+        default=lambda self: self.env.company,
+    )

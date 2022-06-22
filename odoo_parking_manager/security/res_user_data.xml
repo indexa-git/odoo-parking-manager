@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="parking_api_partner" model="res.partner">
+        <field name="name">Parking API User</field>
+        <!--<field name="active" eval="False"/>-->
+    </record>
+
+    <record id="parking_api_user" model="res.users">
+        <field name="login">parking_api_user</field>
+        <field name="partner_id" ref="parking_api_partner"/>
+        <field name="active" eval="False"/>
+    </record>
+
+</odoo>

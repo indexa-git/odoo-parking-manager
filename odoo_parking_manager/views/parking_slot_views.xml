@@ -33,6 +33,7 @@
                     <field name="section_id"/>
                     <field name="company_id"/>
                     <field name="owner_type"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
                 </group>
             </form>
         </field>
@@ -49,6 +50,7 @@
                 <field name="section_id"/>
                 <field name="company_id"/>
                 <field name="owner_type"/>
+                <field name="company_id" groups="base.group_multi_company"/>
             </tree>
         </field>
     </record>
