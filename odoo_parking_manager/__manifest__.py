@@ -7,7 +7,7 @@
     "website": "",
     "category": "",
     "version": "14.0.0.3.1",
-    "depends": ["base_setup"],
+    "depends": ["base_setup", "mail"],
     "data": [
         "security/ir_rule_data.xml",
         "security/res_user_data.xml",

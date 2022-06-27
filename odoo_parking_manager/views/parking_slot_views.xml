@@ -26,15 +26,22 @@
         <field name="model">parking.slot</field>
         <field name="arch" type="xml">
             <form>
-                <group>
-                    <field name="name"/>
-                    <field name="state"/>
-                    <field name="partner_id"/>
-                    <field name="section_id"/>
-                    <field name="company_id"/>
-                    <field name="owner_type"/>
-                    <field name="company_id" groups="base.group_multi_company"/>
-                </group>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="state"/>
+                        <field name="partner_id"/>
+                        <field name="section_id"/>
+                        <field name="company_id"/>
+                        <field name="owner_type"/>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
