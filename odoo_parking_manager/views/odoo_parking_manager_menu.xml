@@ -5,6 +5,7 @@
 
     <menuitem id="parking_manager_menu_root"
               name="Parking Manager"
+              groups="odoo_parking_manager.parking_user"
               sequence="53"/>
 
     <menuitem id="parking_manager_menu_parking"
