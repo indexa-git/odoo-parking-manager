@@ -3,25 +3,29 @@ from odoo import models, fields, api
 
 class ParkingSlot(models.Model):
     _name = "parking.slot"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Parking Slot"
 
     @api.model
     def get_slot_state_selection(self):
         return [("1", "Available"), ("2", "Taken"), ("3", "No Available")]
 
-    name = fields.Char(index=True)
-    takable = fields.Boolean
+    name = fields.Char(index=True, tracking=True)
+    takable = fields.Boolean()
     distance_to_gate = fields.Float()
     distance_to_exit = fields.Float()
     exclusiveness = fields.Float()
-    state = fields.Selection(selection="get_slot_state_selection")
-    partner_id = fields.Many2one("res.partner", ondelete="set null", string="Occupant")
+    state = fields.Selection(selection="get_slot_state_selection", tracking=True)
+    partner_id = fields.Many2one(
+        "res.partner", ondelete="set null", string="Occupant", tracking=True
+    )
     vehicle_type = fields.Selection(
         selection=lambda self: self.env[
             "parking.vehicle"
-        ]._get_vehicle_types_selection()
+        ]._get_vehicle_types_selection(),
+        tracking=True,
     )
-    section_id = fields.Many2one("parking.section", ondelete="set null")
+    section_id = fields.Many2one("parking.section", ondelete="set null", tracking=True)
     owner_type = fields.Selection(
         selection=[
             ("pregnant", "Pregnant"),
@@ -29,12 +33,14 @@ class ParkingSlot(models.Model):
             ("normal", "Normal"),
         ],
         default="normal",
+        tracking=True,
     )
     company_id = fields.Many2one(
         "res.company",
         required=True,
         string="Company",
         default=lambda self: self.env.company,
+        tracking=True,
     )
 
     def set_available_slot(self):
