@@ -10,12 +10,14 @@ class ParkingSlot(models.Model):
     def get_slot_state_selection(self):
         return [("1", "Available"), ("2", "Taken"), ("3", "No Available")]
 
-    name = fields.Char(index=True, tracking=True)
+    name = fields.Char(index=True, tracking=True, required=True)
     takable = fields.Boolean()
     distance_to_gate = fields.Float()
     distance_to_exit = fields.Float()
     exclusiveness = fields.Float()
-    state = fields.Selection(selection="get_slot_state_selection", tracking=True)
+    state = fields.Selection(
+        selection="get_slot_state_selection", tracking=True, default="1"
+    )
     partner_id = fields.Many2one(
         "res.partner", ondelete="set null", string="Occupant", tracking=True
     )
