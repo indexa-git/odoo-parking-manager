@@ -11,6 +11,7 @@ class ParkingSlot(models.Model):
         return [("1", "Available"), ("2", "Taken"), ("3", "No Available")]
 
     name = fields.Char(index=True, tracking=True, required=True)
+    upper_name = fields.Char()
     takable = fields.Boolean()
     distance_to_gate = fields.Float()
     distance_to_exit = fields.Float()
